@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>Cadastrar</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+   <style>
+      .fakeimg {
+         height: 200px;
+         background: #aaa;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="p-5 bg-primary text-white text-center">
+      <h1>Treina Recife</h1>
+      <p>Curso de Front End - HTML - CSS - JAVASCRIPT</p>
+   </div>
+   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+         <ul class="navbar-nav">
+            <li class="nav-item">
+               <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <a class="nav-link active" href="cadastrar.html">Cadastrar</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link active" href="listar.html">Listar</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link active" href="editar.html">Editar</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link active" href="remover.html">Remover</a>
+            </li>
+         </ul>
+      </div>
+   </nav>
+   <form action="">
+      <div class="container-fluid mt-4">
+         <div class="row">
+            <div class="col-sm-3 mb-3">
+               <label for="" class="form-label">Nome:</label><br>
+               <input type="text" id="nome" name="nome" placeholder="Informe o nome" class="form-control" />
+            </div>
+            <div class="col-sm-3 mb-3">
+               <label for="" class="form-label">CPF:</label><br>
+               <input type="text" id="CPF" name="CPF" placeholder="Informe o CPF" class="form-control" />
+            </div>
+            <div class="col-sm-3 mb-3">
+               <label for="" class="form-label">CNPJ:</label><br>
+               <input type="text" id="CNPJ" name="CNPJ" placeholder="Informe o CNPJ" class="form-control" />
+            </div>
+            <div class="col-sm-3 mb-3">
+               <label for="" class="form-label">RG:</label><br>
+               <input type="text" id="RG" name="RG" placeholder="Informe o RG" class="form-control" />
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-sm-6 mb-3">
+               <label for="" class="form-label">Senha:</label><br>
+               <input type="password" id="Senha" name="Senha" placeholder="Informe a senha" class="form-control" />
+            </div>
+            <div class="col-sm-6 mb-3">
+               <label for="" class="form-label">Email:</label><br>
+               <input type="email" id="email" name="email" placeholder="Informe o email" class="form-control" />
+            </div>
+         </div>
+
+
+
+         <div class="row">
+            <div class="col-sm-6 mb-3">
+               <label for="" class="form-label">Data de Nascimento:</label><br>
+               <input type="date" id="datanascimento" name="datanascimento" placeholder="Informe data de Nascimento:"
+                  class="form-control" />
+            </div>
+            <div class="col-sm-6 mb-3">
+               <label for="" class="form-label">Escolha o Sexo de Nascimento:</label><br>
+               <input type="radio" class="form-check-input" id="masculino" name="sexo" value="masculino" />
+               <label for="masculino">Masculino</label><br />
+               <input type="radio" class="form-check-input" id="feminino" name="sexo" value="feminino" />
+               <label for="feminino">Feminino</label><br />
+               <input type="radio" class="form-check-input" id="ninfo" name="sexo" value="ninfo" />
+               <label for="ninfo">Não informado</label>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-sm-12 mb-3">
+               <label for="" class="form-label">UF:</label><br>
+               <select name="" id="" class="form-select">
+                  <option value="PE">Pernambuco</option>
+                  <option value="PB">Bahia</option>
+                  <option value="SP">São Paulo</option>
+               </select>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-sm-12 mb-3">
+               <label for="" class="form-label">Fale sobre você:</label><br>
+               <textarea name="" id="" cols="100" rows="5" class="form-control"></textarea>
+            </div>
+         </div>
+         <div class="col-sm-3 mb-3">
+            <input type="checkbox" name="" id="" />
+            <label for="">Li e concordo</label>
+         </div>
+         <div class="col-sm-3 mb-3">
+            <button type="reset" class="btn btn-warning">Limpar</button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+         </div>
+      </div>
+   </form>
+</body>
+
+</html>
