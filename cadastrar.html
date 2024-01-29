@@ -7,6 +7,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="js/validarform.js"></script>
    <style>
       .fakeimg {
          height: 200px;
@@ -40,81 +41,100 @@
          </ul>
       </div>
    </nav>
-   <form action="">
-      <div class="container-fluid mt-4">
-         <div class="row">
-            <div class="col-sm-3 mb-3">
-               <label for="" class="form-label">Nome:</label><br>
-               <input type="text" id="nome" name="nome" placeholder="Informe o nome" class="form-control" />
-            </div>
-            <div class="col-sm-3 mb-3">
-               <label for="" class="form-label">CPF:</label><br>
-               <input type="text" id="CPF" name="CPF" placeholder="Informe o CPF" class="form-control" />
-            </div>
-            <div class="col-sm-3 mb-3">
-               <label for="" class="form-label">CNPJ:</label><br>
-               <input type="text" id="CNPJ" name="CNPJ" placeholder="Informe o CNPJ" class="form-control" />
-            </div>
-            <div class="col-sm-3 mb-3">
-               <label for="" class="form-label">RG:</label><br>
-               <input type="text" id="RG" name="RG" placeholder="Informe o RG" class="form-control" />
-            </div>
-         </div>
-         <div class="row">
-            <div class="col-sm-6 mb-3">
-               <label for="" class="form-label">Senha:</label><br>
-               <input type="password" id="Senha" name="Senha" placeholder="Informe a senha" class="form-control" />
-            </div>
-            <div class="col-sm-6 mb-3">
-               <label for="" class="form-label">Email:</label><br>
-               <input type="email" id="email" name="email" placeholder="Informe o email" class="form-control" />
+   <div class="container mt-5">
+      <div class="row">
+         <div class="col-sm-12">
+            <!-- AQUI SEU CONTEUDO -->
+            <div class="container">
+               <form action="" method="post" id="meuform">
+                  <div class="row">
+                     <div class="mb-3 mt-3 col-3">
+                        <label class="form-label" for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" size="100" placeholder="Informe o nome"
+                           class="form-control" onblur="" onkeyup="converterNomeParaMaiusculo()">
+                     </div>
+                     <div class="mb-3 mt-3 col-3" id="divpf">
+                        <label class="form-label">CPF:</label>
+                        <input class="form-control" type="text" id="cpf" name="cpf" onblur="">
+                     </div>
+                     <div class="mb-3 mt-3 col-3" id="divpj">
+                        <label class="form-label">CNPJ:</label>
+                        <input class="form-control" type="text" id="cnpj" name="cnpj" onblur="">
+                     </div>
+                     <div class="mb-3 mt-3 col-3">
+                        <label class="form-label">RG:</label>
+                        <input type="text" class="form-control" id="rg" name="rg" value="">
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="mb-3 mt-3 col">
+                        <label class="form-label">Senha:</label>
+                        <input type="password" class="form-control" id="senha" name="senha" size="30">
+                     </div>
+                     <div class="mb-3 mt-3 col">
+                        <label class="form-label">E-mail:</label>
+                        <input type="email" class="form-control" id="email" name="email" size="60">
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="mb-3 mt-3 col">
+                        <label class="form-label">Data de Nascimento:</label>
+                        <input type="date" class="form-control" id="datanascimento" name="datanascimento">
+                     </div>
+                     <div class="mb-3 mt-3 col">
+                        <label class="form-label">Escolha o Sexo de
+                           Nascimento:</label>
+                        <div class="form-check">
+                           <input type="radio" class="form-check-input" id="radiomasculino" name="sexo" value="M">
+                           <label class="form-label" for="html">Masculino</label>
+                        </div>
+                        <div class="form-check">
+                           <input type="radio" class="form-check-input" id="radiofeminino" name="sexo" value="F">
+                           <label class="form-label" for="css">Feminino</label>
+                        </div>
+                        <div class="form-check">
+                           <input type="radio" class="form-check-input" id="radionaoinformado" name="sexo" value="NI">
+                           <label class="form-label" for="javascript">Não
+                              informado</label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="mb-3 mt-3">
+                     <label class="form-label">UF:</label>
+                     <select id="uf" name="uf" class="form-select">
+                        <option value="PE">Pernambuco</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PA">Pará</option>
+                     </select>
+                  </div>
+                  <div class="mb-3 mt-3">
+                     <label class="form-label">Fale sobre você:</label>
+                     <textarea class="form-control" name="falesobrevoce" id="falesobrevoce" rows="5"
+                        cols="30"></textarea>
+                  </div>
+                  <div class="form-check">
+                     <input type="checkbox" class="form-check-input" id="liaceito" name="liaceito" value="li" checked>
+                     <label class="form-check-label" for="check1">Li e
+                        concordo</label>
+                  </div>
+                  <div class="mb-3 mt-3">
+                     <input type="reset" value="Limpar" class="btn
+                    btn-warning">
+                     <input type="button" id="btn1" value="Enviar" class="btn
+                    btn-primary" onclick="validarForm();">
+                  </div>
+                  <div class="mb-3 mt-3" id="mensagemerro">
+
+                  </div>
+               </form>
             </div>
          </div>
 
-
-
-         <div class="row">
-            <div class="col-sm-6 mb-3">
-               <label for="" class="form-label">Data de Nascimento:</label><br>
-               <input type="date" id="datanascimento" name="datanascimento" placeholder="Informe data de Nascimento:"
-                  class="form-control" />
-            </div>
-            <div class="col-sm-6 mb-3">
-               <label for="" class="form-label">Escolha o Sexo de Nascimento:</label><br>
-               <input type="radio" class="form-check-input" id="masculino" name="sexo" value="masculino" />
-               <label for="masculino">Masculino</label><br />
-               <input type="radio" class="form-check-input" id="feminino" name="sexo" value="feminino" />
-               <label for="feminino">Feminino</label><br />
-               <input type="radio" class="form-check-input" id="ninfo" name="sexo" value="ninfo" />
-               <label for="ninfo">Não informado</label>
-            </div>
-         </div>
-         <div class="row">
-            <div class="col-sm-12 mb-3">
-               <label for="" class="form-label">UF:</label><br>
-               <select name="" id="" class="form-select">
-                  <option value="PE">Pernambuco</option>
-                  <option value="PB">Bahia</option>
-                  <option value="SP">São Paulo</option>
-               </select>
-            </div>
-         </div>
-         <div class="row">
-            <div class="col-sm-12 mb-3">
-               <label for="" class="form-label">Fale sobre você:</label><br>
-               <textarea name="" id="" cols="100" rows="5" class="form-control"></textarea>
-            </div>
-         </div>
-         <div class="col-sm-3 mb-3">
-            <input type="checkbox" name="" id="" />
-            <label for="">Li e concordo</label>
-         </div>
-         <div class="col-sm-3 mb-3">
-            <button type="reset" class="btn btn-warning">Limpar</button>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-         </div>
       </div>
-   </form>
+   </div>
+
+
 </body>
 
 </html>
